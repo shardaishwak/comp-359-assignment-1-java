@@ -22,4 +22,17 @@ public class Utility {
         toList.toArray(arr);
         return arr;
     }
+    public static Integer[] generateRandomArray(int size) {
+        Integer[] arr = new Integer[size];
+
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = (int)(Math.random() * size * 1000);
+        }
+
+        List<Integer> toList = Arrays.asList(arr);
+        Collections.shuffle(toList);
+
+        toList.toArray(arr);
+        return arr;
+    }
 }

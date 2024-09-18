@@ -8,9 +8,11 @@ public class Canvas  {
     float x, y, width, height;
     PApplet p;
 
-    Integer[] data;
+    AbstractSorting sorting;
 
-    public Canvas(PApplet p, float x, float y, float width, float height, Integer[] data) {
+    int maxValue;
+
+    public Canvas(PApplet p, float x, float y, float width, float height, AbstractSorting sorting) {
         this.p = p;
         this.x = x;
         this.y = y;
@@ -18,14 +20,49 @@ public class Canvas  {
         this.height = height;
 
         this.pg = p.createGraphics((int) width, (int) height);
-        this.data = data;
+        this.sorting = sorting;
+        this.maxValue = this.max(sorting.getValues());
     }
 
-    public void draw() {
-        float rectWidth = this.width / this.data.length;
+    public void display() {
 
-        for (int i = 0; i < this.data.length; i++) {
-            this.pg.rect(i * rectWidth, this.height - data[i], rectWidth, data[i]);
+
+
+        pg.beginDraw();
+        pg.background(0);  // Clear the screen
+
+        Integer[] values = sorting.getValues();
+        Integer[] states = sorting.getStates();  // Retrieve the states to visualize comparisons
+        float rectWidth = width / (float) values.length;
+        float fact = this.height / (float) this.maxValue;
+
+        for (int i = 0; i < values.length; i++) {
+            {
+                // Inactive state
+                pg.fill(100, 100, 255);  // Blue for default elements
+            }
+
+            // Draw the rectangle representing the element
+            pg.rect(i * rectWidth, this.height - values[i] * fact, rectWidth, values[i] * fact);
         }
+
+// Step through the sorting process
+        pg.endDraw();
+        p.image(pg, x, y);
+        sorting.nextStep();
+
     }
+
+    public int max(Integer[] values) {
+        int max = Integer.MIN_VALUE;
+        for (Integer value : values) {
+            max = Math.max(value, max);
+        }
+
+        return max;
+    }
+
+
+
+
 }
