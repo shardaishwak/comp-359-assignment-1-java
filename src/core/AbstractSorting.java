@@ -23,6 +23,8 @@ public abstract class AbstractSorting {
 
     public void nextStep() {}
 
+    public void run() {}
+
 
     public void incrementComparator( ){
         this.comparisonCount++;
