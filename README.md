@@ -27,10 +27,6 @@ This project uses the **Processing** library for graphical rendering and focuses
 - [Installation](#installation)
 - [Usage](#usage)
 - [Multithreading](#multithreading)
-- [Sorting Algorithms](#sorting-algorithms)
-- [Customization](#customization)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Installation
 
