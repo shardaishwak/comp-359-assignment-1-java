@@ -2,6 +2,10 @@
 
 ## Contributor
 - Ishwak Sharda (300205473): ishwak.sharda@student.ufv.ca
+   - Developed Frameword
+   - Developed Algorithms
+   - Developed Multithreading
+   - Developed Tests
 
 ## Overview
 
