@@ -39,7 +39,7 @@ This project uses the **Processing** library for graphical rendering and focuses
    - Make sure to include the `Processing` library in your project. You can download it [here](https://processing.org/download/).
    - Add the `core.jar` file to your project’s classpath.
    
-4. **Run the project**: Run the `Main.java` class to start the sorting visualizer.
+4. **Run the project**: Run the `MainThreaded.java` class to start the sorting visualizer.
 
 ## Usage
 
