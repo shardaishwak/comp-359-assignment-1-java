@@ -23,7 +23,7 @@ public abstract class AbstractSortingThreaded implements Runnable {
         this.swapCount = 0;
         this.comparisonCount = 0;
         this.name = name;
-        this.speed = 10;
+        this.speed = 1;
         this.endTime = 0;
         this.startTime = 0;
 

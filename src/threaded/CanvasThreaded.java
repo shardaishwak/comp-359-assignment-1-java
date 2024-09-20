@@ -32,9 +32,6 @@ public class CanvasThreaded  {
         pg.fill(255);
         pg.textSize(32);
         pg.text(this.sorting.getName(), 10, 30);
-        pg.textSize(16);
-        pg.text("Comparisons: " + sorting.getComparisonCount(), 10, 60);
-        pg.text("Swaps: " + sorting.getSwapCount(), 10, 80);
 
         Integer[] values = sorting.getValues();
         Integer[] states = sorting.getStates();

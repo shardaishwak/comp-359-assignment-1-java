@@ -13,7 +13,7 @@ import java.util.Arrays;
 public class MainThreaded extends PApplet {
 
     public ArrayList<CanvasThreaded> canvases = new ArrayList<>();
-    public Integer[] arr = Utility.generateRandomArray(300);
+    public Integer[] arr = Utility.generateRandomArray(100);
 
 
     public static void main(String[] args) {
