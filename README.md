@@ -13,6 +13,7 @@ This project uses the **Processing** library for graphical rendering and focuses
   - Merge Sort
   - Quick Sort
   - Radix Sort
+  - Bogo Sort
   - Insertion Sort
 - **Multithreading**: Each sorting algorithm runs in its own thread, allowing for faster and smoother animations.
 - **Real-Time Visualization**: Watch the sorting process unfold in real-time.
