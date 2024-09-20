@@ -1,5 +1,8 @@
 # Sorting Algorithm Visualizer using Multithreading in Java
 
+## Contributor
+- Ishwak Sharda (300205473): ishwak.sharda@student.ufv.ca
+
 ## Overview
 
 This project is a **Sorting Algorithm Visualizer** built with Java, using **multithreading** for real-time visualizations of popular sorting algorithms. The visualizer illustrates how different algorithms work step-by-step by displaying the sorting process on the screen.
