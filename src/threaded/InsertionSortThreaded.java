@@ -26,7 +26,7 @@ public class InsertionSortThreaded extends AbstractSortingThreaded {
             int j = i - 1;
 
             activateState(i);
-            Thread.sleep(100);
+            Thread.sleep(this.getSpeed());
 
             while (j >= 0 && arr[j] > key) {
                 incrementComparator();

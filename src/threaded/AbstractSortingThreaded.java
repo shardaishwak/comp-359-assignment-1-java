@@ -38,6 +38,9 @@ public abstract class AbstractSortingThreaded implements Runnable {
     public int getSpeed() {
         return this.speed;
     }
+    public void setSpeed(int value) {
+        this.speed = value;
+    }
 
     public void start() {
         this.startTime = System.currentTimeMillis();
