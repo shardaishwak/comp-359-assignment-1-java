@@ -1,14 +1,16 @@
-package core.threaded;
+package threaded;
 
 public class MergeSortThreaded extends AbstractSortingThreaded{
 
-    public MergeSortThreaded(Integer[] values) {
-        super(values);
+    public MergeSortThreaded(String name,Integer[] values) {
+        super(name, values);
     }
 
     @Override
     public void run() {
+        this.start();
         mergeSort(getValues(), 0, getValues().length - 1);
+        this.end();
     }
 
     private void mergeSort(Integer[] arr, int left, int right) {
@@ -40,7 +42,7 @@ public class MergeSortThreaded extends AbstractSortingThreaded{
         int k = left;
         while (i < n1 && j < n2) {
             try {
-                Thread.sleep(20);
+                Thread.sleep(this.getSpeed());
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
@@ -58,7 +60,7 @@ public class MergeSortThreaded extends AbstractSortingThreaded{
 
         while (i < n1) {
             try {
-                Thread.sleep(20);
+                Thread.sleep(this.getSpeed());
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
@@ -70,7 +72,7 @@ public class MergeSortThreaded extends AbstractSortingThreaded{
 
         while (j < n2) {
             try {
-                Thread.sleep(20);
+                Thread.sleep(this.getSpeed());
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
@@ -82,7 +84,7 @@ public class MergeSortThreaded extends AbstractSortingThreaded{
 
         for (int idx = left; idx <= right; idx++) {
             try {
-                Thread.sleep(20);
+                Thread.sleep(this.getSpeed());
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }

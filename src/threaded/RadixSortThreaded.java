@@ -1,20 +1,22 @@
-package core.threaded;
+package threaded;
 
 import java.util.Arrays;
 
 public class RadixSortThreaded extends AbstractSortingThreaded {
 
-    public RadixSortThreaded(Integer[] values) {
-        super(values);
+    public RadixSortThreaded(String name, Integer[] values) {
+        super(name, values);
     }
 
     @Override
     public void run() {
+        this.start();
         try {
             radixSort();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        this.end();
     }
 
     private int getMax(Integer[] arr) {
@@ -32,14 +34,14 @@ public class RadixSortThreaded extends AbstractSortingThreaded {
             int index = (arr[i] / exp) % 10;
             count[index]++;
             activateState(i);
-            Thread.sleep(50);
+            Thread.sleep(this.getSpeed());
             deactivateState(i);
         }
 
         for (int i = 1; i < 10; i++) {
             count[i] += count[i - 1];
             activateState(i);
-            Thread.sleep(50);
+            Thread.sleep(this.getSpeed());
             deactivateState(i);
         }
 
@@ -48,14 +50,14 @@ public class RadixSortThreaded extends AbstractSortingThreaded {
             output[count[index] - 1] = arr[i];
             count[index]--;
             activateState(i);
-            Thread.sleep(50);
+            Thread.sleep(this.getSpeed());
             deactivateState(i);
         }
 
         for (int i = 0; i < n; i++) {
             arr[i] = output[i];
             activateState(i);
-            Thread.sleep(50);
+            Thread.sleep(this.getSpeed());
             deactivateState(i);
         }
     }

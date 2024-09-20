@@ -1,9 +1,7 @@
-package core.threaded;
+package threaded;
 
 import processing.core.PApplet;
 import processing.core.PGraphics;
-
-import java.util.Arrays;
 
 public class CanvasThreaded  {
     PGraphics pg;
@@ -29,10 +27,17 @@ public class CanvasThreaded  {
     public void display() {
 
         pg.beginDraw();
-        pg.background(0);  // Clear the screen
+        pg.background(0);
+
+        pg.fill(255);
+        pg.textSize(32);
+        pg.text(this.sorting.getName(), 10, 30);
+        pg.textSize(16);
+        pg.text("Comparisons: " + sorting.getComparisonCount(), 10, 60);
+        pg.text("Swaps: " + sorting.getSwapCount(), 10, 80);
 
         Integer[] values = sorting.getValues();
-        Integer[] states = sorting.getStates();  // Retrieve the states to visualize comparisons
+        Integer[] states = sorting.getStates();
         float rectWidth = width / (float) values.length;
         float fact = this.height / (float) this.maxValue;
 
@@ -47,6 +52,12 @@ public class CanvasThreaded  {
 
             pg.rect(i * rectWidth, this.height - values[i] * fact, rectWidth, values[i] * fact);
         }
+
+        pg.fill(255);
+        pg.textSize(16);
+        pg.text("Comparisons: " + sorting.getComparisonCount(), 10, 60);
+        pg.text("Swaps: " + sorting.getSwapCount(), 10, 80);
+        pg.text("Time: " + Double.toString(sorting.getTimeElapsed()/(double)1000) +" s", 10, 100);
 
 // Step through the sorting process
         pg.endDraw();

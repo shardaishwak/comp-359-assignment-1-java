@@ -1,18 +1,20 @@
-package core.threaded;
+package threaded;
 
 public class BubbleSortThreaded extends AbstractSortingThreaded {
 
-    public BubbleSortThreaded(Integer[] values) {
-        super(values);
+    public BubbleSortThreaded(String name, Integer[] values) {
+        super(name, values);
     }
 
     @Override
     public void run() {
+        this.start();
         try {
             bubbleSort();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        this.end();
     }
 
     private void bubbleSort() throws InterruptedException {
@@ -33,13 +35,13 @@ public class BubbleSortThreaded extends AbstractSortingThreaded {
 
                     incrementSwap();
 
-                    Thread.sleep(100);
+                    Thread.sleep(this.getSpeed());
                 }
 
                 deactivateState(j);
                 deactivateState(j + 1);
 
-                Thread.sleep(50);
+                Thread.sleep(this.getSpeed());
             }
             activateState(n - i - 1);
         }
