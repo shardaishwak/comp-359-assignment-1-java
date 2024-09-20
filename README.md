@@ -36,11 +36,7 @@ This project uses the **Processing** library for graphical rendering and focuses
     git clone https://github.com/yourusername/sorting-visualizer-multithreading.git
     ```
 2. **Open the project** in your favorite Java IDE. This project uses IntelliJ IDEA with the **Processing** library for rendering.
-3. **Install dependencies**: 
-   - Make sure to include the `Processing` library in your project. You can download it [here](https://processing.org/download/).
-   - Add the `core.jar` file to your project’s classpath.
-   
-4. **Run the project**: Run the `MainThreaded.java` class to start the sorting visualizer.
+3. **Run the project**: Run the `MainThreaded.java` class to start the sorting visualizer.
 
 ## Usage
 
