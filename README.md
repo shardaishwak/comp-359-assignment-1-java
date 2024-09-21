@@ -39,6 +39,14 @@ This project uses the **Processing** library for graphical rendering and focuses
 2. **Open the project** in your favorite Java IDE. This project uses IntelliJ IDEA with the **Processing** library for rendering.
 3. **Run the project**: Run the `MainThreaded.java` class to start the sorting visualizer.
 
+
+### Counting sort simulation
+We created a new illustration for counting sort. This is because the counting sort involved different new arrays that are being manipuated while the original one is idle. To accomodate those arrays, we created a new UI. Here are the steps to work with that:
+1. Install **Processing** library
+2. Choose the `counting/counting.pde` file in the source code.
+3. Run the animation
+
+
 ## Usage
 
 1. **Select Sorting Algorithm**: Upon running the program, you can select the desired sorting algorithm from the interface.
